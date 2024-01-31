@@ -15,6 +15,19 @@
 		838715802B0EA0E700D1DDCF /* CryptoCurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8387157F2B0EA0E700D1DDCF /* CryptoCurrencyTests.swift */; };
 		8387158A2B0EA0E700D1DDCF /* CryptoCurrencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838715892B0EA0E700D1DDCF /* CryptoCurrencyUITests.swift */; };
 		8387158C2B0EA0E700D1DDCF /* CryptoCurrencyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8387158B2B0EA0E700D1DDCF /* CryptoCurrencyUITestsLaunchTests.swift */; };
+		83A8A8A62B6912BA00985323 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8A8A52B6912BA00985323 /* Context.swift */; };
+		83A8A8A92B69137600985323 /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = 83A8A8A82B69137600985323 /* DependencyInjection */; };
+		83A8A8AC2B69CD7A00985323 /* BaseNetworkServiceInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8A8AB2B69CD7A00985323 /* BaseNetworkServiceInterceptor.swift */; };
+		83A8A8AF2B69CDD100985323 /* NetworkService+DependencyModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8A8AE2B69CDD100985323 /* NetworkService+DependencyModule.swift */; };
+		83A8A8B12B69CE4800985323 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8A8B02B69CE4800985323 /* NetworkService.swift */; };
+		83A8A8B32B69D83900985323 /* NetworkServiceAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8A8B22B69D83900985323 /* NetworkServiceAccessor.swift */; };
+		83AC6D4E2B13CBDB00FBBB02 /* CMCMetaResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC6D4D2B13CBDB00FBBB02 /* CMCMetaResult.swift */; };
+		83C2C2B42B669C7900BA97E7 /* NetworkComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 83C2C2B32B669C7900BA97E7 /* NetworkComponents */; };
+		83C2C2B72B66AD2900BA97E7 /* ServiceURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C2C2B62B66AD2900BA97E7 /* ServiceURL.swift */; };
+		83C2C2B92B66ADCB00BA97E7 /* CMCServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C2C2B82B66ADCB00BA97E7 /* CMCServices.swift */; };
+		83C2C2BC2B66AFEA00BA97E7 /* CMCKeyDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C2C2BB2B66AFEA00BA97E7 /* CMCKeyDetailResponse.swift */; };
+		83C2C2BE2B66B40400BA97E7 /* KeyDetailResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 83C2C2BD2B66B40400BA97E7 /* KeyDetailResponse.json */; };
+		83C2C2C02B66B60800BA97E7 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C2C2BF2B66B60800BA97E7 /* XCTestCase+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +61,17 @@
 		838715852B0EA0E700D1DDCF /* CryptoCurrencyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoCurrencyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		838715892B0EA0E700D1DDCF /* CryptoCurrencyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyUITests.swift; sourceTree = "<group>"; };
 		8387158B2B0EA0E700D1DDCF /* CryptoCurrencyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		83A8A8A52B6912BA00985323 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		83A8A8AB2B69CD7A00985323 /* BaseNetworkServiceInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkServiceInterceptor.swift; sourceTree = "<group>"; };
+		83A8A8AE2B69CDD100985323 /* NetworkService+DependencyModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService+DependencyModule.swift"; sourceTree = "<group>"; };
+		83A8A8B02B69CE4800985323 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		83A8A8B22B69D83900985323 /* NetworkServiceAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceAccessor.swift; sourceTree = "<group>"; };
+		83AC6D4D2B13CBDB00FBBB02 /* CMCMetaResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMCMetaResult.swift; sourceTree = "<group>"; };
+		83C2C2B62B66AD2900BA97E7 /* ServiceURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceURL.swift; sourceTree = "<group>"; };
+		83C2C2B82B66ADCB00BA97E7 /* CMCServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMCServices.swift; sourceTree = "<group>"; };
+		83C2C2BB2B66AFEA00BA97E7 /* CMCKeyDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMCKeyDetailResponse.swift; sourceTree = "<group>"; };
+		83C2C2BD2B66B40400BA97E7 /* KeyDetailResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = KeyDetailResponse.json; sourceTree = "<group>"; };
+		83C2C2BF2B66B60800BA97E7 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83C2C2B42B669C7900BA97E7 /* NetworkComponents in Frameworks */,
+				83A8A8A92B69137600985323 /* DependencyInjection in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,13 +124,17 @@
 		838715692B0EA0E500D1DDCF /* CryptoCurrency */ = {
 			isa = PBXGroup;
 			children = (
+				83A8A8AA2B69CD6000985323 /* NetworkLayer */,
+				83C2C2B52B66ACE900BA97E7 /* Services */,
 				8387156A2B0EA0E500D1DDCF /* CryptoCurrencyApp.swift */,
+				83AC6D4C2B13CBB800FBBB02 /* Model */,
 				8387156C2B0EA0E500D1DDCF /* ContentView.swift */,
 				8387156E2B0EA0E500D1DDCF /* Item.swift */,
 				838715702B0EA0E600D1DDCF /* Assets.xcassets */,
 				838715752B0EA0E600D1DDCF /* CryptoCurrency.entitlements */,
 				838715762B0EA0E600D1DDCF /* Info.plist */,
 				838715722B0EA0E600D1DDCF /* Preview Content */,
+				83A8A8A52B6912BA00985323 /* Context.swift */,
 			);
 			path = CryptoCurrency;
 			sourceTree = "<group>";
@@ -121,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				8387157F2B0EA0E700D1DDCF /* CryptoCurrencyTests.swift */,
+				83C2C2BD2B66B40400BA97E7 /* KeyDetailResponse.json */,
+				83C2C2BF2B66B60800BA97E7 /* XCTestCase+Extension.swift */,
 			);
 			path = CryptoCurrencyTests;
 			sourceTree = "<group>";
@@ -132,6 +164,51 @@
 				8387158B2B0EA0E700D1DDCF /* CryptoCurrencyUITestsLaunchTests.swift */,
 			);
 			path = CryptoCurrencyUITests;
+			sourceTree = "<group>";
+		};
+		83A8A8AA2B69CD6000985323 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				83A8A8AD2B69CDB200985323 /* Extensions */,
+				83A8A8AB2B69CD7A00985323 /* BaseNetworkServiceInterceptor.swift */,
+				83A8A8B02B69CE4800985323 /* NetworkService.swift */,
+				83A8A8B22B69D83900985323 /* NetworkServiceAccessor.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		83A8A8AD2B69CDB200985323 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				83A8A8AE2B69CDD100985323 /* NetworkService+DependencyModule.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		83AC6D4C2B13CBB800FBBB02 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83AC6D4D2B13CBDB00FBBB02 /* CMCMetaResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		83C2C2B52B66ACE900BA97E7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				83C2C2BA2B66AFC900BA97E7 /* Models */,
+				83C2C2B62B66AD2900BA97E7 /* ServiceURL.swift */,
+				83C2C2B82B66ADCB00BA97E7 /* CMCServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		83C2C2BA2B66AFC900BA97E7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				83C2C2BB2B66AFEA00BA97E7 /* CMCKeyDetailResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +227,10 @@
 			dependencies = (
 			);
 			name = CryptoCurrency;
+			packageProductDependencies = (
+				83C2C2B32B669C7900BA97E7 /* NetworkComponents */,
+				83A8A8A82B69137600985323 /* DependencyInjection */,
+			);
 			productName = CryptoCurrency;
 			productReference = 838715672B0EA0E500D1DDCF /* CryptoCurrency.app */;
 			productType = "com.apple.product-type.application";
@@ -222,6 +303,10 @@
 				Base,
 			);
 			mainGroup = 8387155E2B0EA0E500D1DDCF;
+			packageReferences = (
+				83C2C2B22B669C7900BA97E7 /* XCRemoteSwiftPackageReference "NetworkComponents" */,
+				83A8A8A72B69137600985323 /* XCRemoteSwiftPackageReference "DependencyInjection" */,
+			);
 			productRefGroup = 838715682B0EA0E500D1DDCF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -247,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83C2C2BE2B66B40400BA97E7 /* KeyDetailResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,9 +350,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83A8A8B12B69CE4800985323 /* NetworkService.swift in Sources */,
 				8387156D2B0EA0E500D1DDCF /* ContentView.swift in Sources */,
 				8387156F2B0EA0E500D1DDCF /* Item.swift in Sources */,
 				8387156B2B0EA0E500D1DDCF /* CryptoCurrencyApp.swift in Sources */,
+				83C2C2B92B66ADCB00BA97E7 /* CMCServices.swift in Sources */,
+				83A8A8B32B69D83900985323 /* NetworkServiceAccessor.swift in Sources */,
+				83C2C2BC2B66AFEA00BA97E7 /* CMCKeyDetailResponse.swift in Sources */,
+				83A8A8A62B6912BA00985323 /* Context.swift in Sources */,
+				83C2C2B72B66AD2900BA97E7 /* ServiceURL.swift in Sources */,
+				83A8A8AC2B69CD7A00985323 /* BaseNetworkServiceInterceptor.swift in Sources */,
+				83AC6D4E2B13CBDB00FBBB02 /* CMCMetaResult.swift in Sources */,
+				83A8A8AF2B69CDD100985323 /* NetworkService+DependencyModule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83C2C2C02B66B60800BA97E7 /* XCTestCase+Extension.swift in Sources */,
 				838715802B0EA0E700D1DDCF /* CryptoCurrencyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -600,6 +696,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		83A8A8A72B69137600985323 /* XCRemoteSwiftPackageReference "DependencyInjection" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aamoros1/DependencyInjection";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		83C2C2B22B669C7900BA97E7 /* XCRemoteSwiftPackageReference "NetworkComponents" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aamoros1/NetworkComponents";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		83A8A8A82B69137600985323 /* DependencyInjection */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83A8A8A72B69137600985323 /* XCRemoteSwiftPackageReference "DependencyInjection" */;
+			productName = DependencyInjection;
+		};
+		83C2C2B32B669C7900BA97E7 /* NetworkComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83C2C2B22B669C7900BA97E7 /* XCRemoteSwiftPackageReference "NetworkComponents" */;
+			productName = NetworkComponents;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8387155F2B0EA0E500D1DDCF /* Project object */;
 }

@@ -10,6 +10,9 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    @State
+    var keyDetail: KeyDetail? = nil
+    let services = CoinMarketCryptoToolServices()
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
 
@@ -24,6 +27,13 @@ struct ContentView: View {
                     }
                 }
                 .onDelete(perform: deleteItems)
+            }
+            .task(priority: .background) {
+                do {
+                    keyDetail = try await services.fetchKeyDetailInfo()
+                } catch {
+                    
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
