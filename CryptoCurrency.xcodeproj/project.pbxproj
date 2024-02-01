@@ -21,6 +21,7 @@
 		83A8A8AF2B69CDD100985323 /* NetworkService+DependencyModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8A8AE2B69CDD100985323 /* NetworkService+DependencyModule.swift */; };
 		83A8A8B12B69CE4800985323 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8A8B02B69CE4800985323 /* NetworkService.swift */; };
 		83A8A8B32B69D83900985323 /* NetworkServiceAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8A8B22B69D83900985323 /* NetworkServiceAccessor.swift */; };
+		83A8A8B72B6A8C1C00985323 /* KeyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8A8B62B6A8C1C00985323 /* KeyDetailView.swift */; };
 		83AC6D4E2B13CBDB00FBBB02 /* CMCMetaResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC6D4D2B13CBDB00FBBB02 /* CMCMetaResult.swift */; };
 		83C2C2B42B669C7900BA97E7 /* NetworkComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 83C2C2B32B669C7900BA97E7 /* NetworkComponents */; };
 		83C2C2B72B66AD2900BA97E7 /* ServiceURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C2C2B62B66AD2900BA97E7 /* ServiceURL.swift */; };
@@ -28,6 +29,7 @@
 		83C2C2BC2B66AFEA00BA97E7 /* CMCKeyDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C2C2BB2B66AFEA00BA97E7 /* CMCKeyDetailResponse.swift */; };
 		83C2C2BE2B66B40400BA97E7 /* KeyDetailResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 83C2C2BD2B66B40400BA97E7 /* KeyDetailResponse.json */; };
 		83C2C2C02B66B60800BA97E7 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C2C2BF2B66B60800BA97E7 /* XCTestCase+Extension.swift */; };
+		83D2C8F22B6AE9FB000D4187 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 83D2C8F12B6AE9FB000D4187 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,12 +68,14 @@
 		83A8A8AE2B69CDD100985323 /* NetworkService+DependencyModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService+DependencyModule.swift"; sourceTree = "<group>"; };
 		83A8A8B02B69CE4800985323 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		83A8A8B22B69D83900985323 /* NetworkServiceAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceAccessor.swift; sourceTree = "<group>"; };
+		83A8A8B62B6A8C1C00985323 /* KeyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyDetailView.swift; sourceTree = "<group>"; };
 		83AC6D4D2B13CBDB00FBBB02 /* CMCMetaResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMCMetaResult.swift; sourceTree = "<group>"; };
 		83C2C2B62B66AD2900BA97E7 /* ServiceURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceURL.swift; sourceTree = "<group>"; };
 		83C2C2B82B66ADCB00BA97E7 /* CMCServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMCServices.swift; sourceTree = "<group>"; };
 		83C2C2BB2B66AFEA00BA97E7 /* CMCKeyDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMCKeyDetailResponse.swift; sourceTree = "<group>"; };
 		83C2C2BD2B66B40400BA97E7 /* KeyDetailResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = KeyDetailResponse.json; sourceTree = "<group>"; };
 		83C2C2BF2B66B60800BA97E7 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
+		83D2C8F12B6AE9FB000D4187 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,8 @@
 		838715692B0EA0E500D1DDCF /* CryptoCurrency */ = {
 			isa = PBXGroup;
 			children = (
+				83D2C8F02B6AE9D5000D4187 /* Resources */,
+				83A8A8B42B6A8BE100985323 /* View */,
 				83A8A8AA2B69CD6000985323 /* NetworkLayer */,
 				83C2C2B52B66ACE900BA97E7 /* Services */,
 				8387156A2B0EA0E500D1DDCF /* CryptoCurrencyApp.swift */,
@@ -185,6 +191,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		83A8A8B42B6A8BE100985323 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				83A8A8B62B6A8C1C00985323 /* KeyDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		83AC6D4C2B13CBB800FBBB02 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +223,14 @@
 				83C2C2BB2B66AFEA00BA97E7 /* CMCKeyDetailResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		83D2C8F02B6AE9D5000D4187 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				83D2C8F12B6AE9FB000D4187 /* Localizable.xcstrings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +347,7 @@
 			files = (
 				838715742B0EA0E600D1DDCF /* Preview Assets.xcassets in Resources */,
 				838715712B0EA0E600D1DDCF /* Assets.xcassets in Resources */,
+				83D2C8F22B6AE9FB000D4187 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +375,7 @@
 			files = (
 				83A8A8B12B69CE4800985323 /* NetworkService.swift in Sources */,
 				8387156D2B0EA0E500D1DDCF /* ContentView.swift in Sources */,
+				83A8A8B72B6A8C1C00985323 /* KeyDetailView.swift in Sources */,
 				8387156F2B0EA0E500D1DDCF /* Item.swift in Sources */,
 				8387156B2B0EA0E500D1DDCF /* CryptoCurrencyApp.swift in Sources */,
 				83C2C2B92B66ADCB00BA97E7 /* CMCServices.swift in Sources */,

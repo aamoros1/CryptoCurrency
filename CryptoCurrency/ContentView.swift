@@ -29,11 +29,7 @@ struct ContentView: View {
                 .onDelete(perform: deleteItems)
             }
             .task(priority: .background) {
-                do {
-                    keyDetail = try await services.fetchKeyDetailInfo()
-                } catch {
-                    
-                }
+  
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

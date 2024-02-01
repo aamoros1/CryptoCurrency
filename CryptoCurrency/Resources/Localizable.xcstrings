@@ -1,0 +1,101 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Add Item" : {
+
+    },
+    "do" : {
+
+    },
+    "hi" : {
+
+    },
+    "Item at %@" : {
+
+    },
+    "KeyDetailPlanView.CreditLimitMonthlyReset" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In %@"
+          }
+        }
+      }
+    },
+    "KeyDetailPlanView.Header" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plan"
+          }
+        }
+      }
+    },
+    "KeyDetailView.currentDay" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Current Day"
+          }
+        }
+      }
+    },
+    "KeyDetailView.currentMinute" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Current Minute"
+          }
+        }
+      }
+    },
+    "KeyDetailView.currentMonth" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Current Month"
+          }
+        }
+      }
+    },
+    "Select an item" : {
+
+    },
+    "Usage" : {
+
+    },
+    "Usage.Remaining" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Credits Remaining: %d"
+          }
+        }
+      }
+    },
+    "Usage.Row" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Credits Used: %d"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
