@@ -12,18 +12,7 @@ import SwiftData
 struct CryptoCurrencyApp: App {
     
     let serviceManager: CoinMarketServiceManager = CoinMarketServiceManager()
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    var swiftDataManager: SwiftDataManager = SwiftDataManager(CryptoToken.self)
 
     var body: some Scene {
         WindowGroup {
@@ -34,7 +23,28 @@ struct CryptoCurrencyApp: App {
                     await serviceManager.fetchKeyDetail()
                 }
         }
-        .modelContainer(sharedModelContainer)
+        .modelContainer(swiftDataManager.container)
+    }
+}
+
+@ModelActor
+actor SwiftDataCacheHandler {
+    func saveCachedObjects(models: [any PersistentModel]) throws {
+        models.forEach { model in
+            modelContext.insert(model)
+        }
+        try modelContext.save()
+    }
+}
+
+@Observable
+final class ViewModel {
+    
+    private var context: ModelContext
+    
+    init(context: ModelContext)
+    {
+        self.context = context
     }
 }
 

@@ -36,7 +36,7 @@ struct KeyDetailView: View {
     }
 }
 
-struct KeyDetailPlanView: View {
+fileprivate struct KeyDetailPlanView: View {
 
     struct KeyDetailConstant {
         static let KeyDetailPlanHeader: String = String(localized: "KeyDetailPlanView.Header")
@@ -55,7 +55,7 @@ struct KeyDetailPlanView: View {
     }
 }
 
-struct UsageRow: View {
+fileprivate struct UsageRow: View {
 
     struct UseageRowConstant {
         static let usage: String = String(localized: "Usage.Row")
