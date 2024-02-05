@@ -9,7 +9,7 @@ import Foundation
 
 @Model
 class CryptoToken: Codable {
-    let id: String
+    let id: Int
     let rank: Int
     let name: String
     let symbol: String
@@ -25,7 +25,7 @@ class CryptoToken: Codable {
         self.rank = rankt
         self.name = name
         self.symbol = symbol
-        self.id = UUID().uuidString
+        self.id = rankt
         dateCreated = Date().description(with: .current)
         isActive = true
     }
@@ -33,12 +33,13 @@ class CryptoToken: Codable {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        id = try container.decode(String.self, forKey: .id)
+        id = try container.decode(Int.self, forKey: .id)
         rank = try container.decode(Int.self, forKey: .rank)
         name = try container.decode(String.self, forKey: .name)
         symbol = try container.decode(String.self, forKey: .symbol)
         dateCreated = try container.decode(String.self, forKey: .dateCreated)
-        isActive = try container.decode(Bool.self, forKey: .isActive)
+        let number = try container.decode(Int.self, forKey: .isActive)
+        isActive = number == 1
     }
 
     enum CodingKeys: String, CodingKey {

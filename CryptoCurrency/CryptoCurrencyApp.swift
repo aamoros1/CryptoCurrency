@@ -21,6 +21,9 @@ struct CryptoCurrencyApp: App {
                 .task(priority: .background) {
                     Context.registerDependencies()
                     await serviceManager.fetchKeyDetail()
+                    let results = try? await serviceManager.fetchTokens(with: ["BTC", "USDT"])
+                    print(results)
+//                    JSONSerialization.jsonObject(with: <#T##Data#>, options: .topLevelDictionaryAssumed)
                 }
         }
         .modelContainer(swiftDataManager.container)
@@ -37,23 +40,12 @@ actor SwiftDataCacheHandler {
     }
 }
 
-@Observable
-final class ViewModel {
-    
-    private var context: ModelContext
-    
-    init(context: ModelContext)
-    {
-        self.context = context
-    }
-}
-
 struct MainView: View {
     var body: some View {
         TabView {
-            Text("hi")
+            CryptoCurrencyListingView()
                 .tabItem {
-                    Label("do", systemImage: "circle")
+                    Label("MainView.HomeTab", systemImage: "house")
                 }
             KeyDetailView()
                 .tabItem {

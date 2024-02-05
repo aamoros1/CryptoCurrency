@@ -1,12 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "do" : {
-
-    },
-    "hi" : {
-
-    },
     "KeyDetailPlanView.CreditLimitMonthlyReset" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -61,6 +55,19 @@
           }
         }
       }
+    },
+    "MainView.HomeTab" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        }
+      }
+    },
+    "Tokens" : {
+
     },
     "Usage" : {
 

@@ -8,7 +8,6 @@
 import SwiftData
 import Foundation
 
-#if DEBUG
 extension SwiftDataManager {
     func addPersistentDataModels(models: [any PersistentModel]) {
         Task {
@@ -17,4 +16,3 @@ extension SwiftDataManager {
         }
     }
 }
-#endif

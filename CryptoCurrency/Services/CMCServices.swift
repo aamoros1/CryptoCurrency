@@ -29,11 +29,31 @@ final class CoinMarketServiceManager: CoinMarketServiceManaging {
 
     func fetchKeyDetail() async
     {
-        #if DEBUG
-        keydetail = .defaultValue
-        #else
         keydetail = try? await cryptoToolServices.fetchKeyDetailInfo()
-        #endif
+    }
+
+    func fetchTokens(with symbolTokens: [String]) async throws -> [CryptoToken]? {
+        let query = ["symbol": symbolTokens.joined(separator: ",")]
+        async let token = networkService.processRequest(with: .coinMarketCap, content: query)
+        // CMCResponse<CryptoToken>.self
+        guard
+            try await token.waitForCompletion(for: 5000)
+        else {
+            throw NSError()
+        }
+        
+        guard
+            let response = try await token.result as? NetworkResponse else {
+            return nil
+        }
+        
+        guard
+            let cmcResponse = response.content as? CMCResponse<[CryptoToken]>
+        else {
+            throw BaseNetworkServiceError.serviceError(response.error)
+        }
+        
+        return cmcResponse.data
     }
 }
 
@@ -59,7 +79,7 @@ final class CoinMarketCryptoToolServices: NetworkServiceAccessor {
         guard 
             await token.waitForCompletion(for: 5000)
         else {
-            throw BaseNetworkServiceError.timeout(.keyDetailNetworkRequest)
+            throw NSError()
         }
         
         guard
@@ -74,15 +94,5 @@ final class CoinMarketCryptoToolServices: NetworkServiceAccessor {
         }
         
         return cmcResponse.data
-    }
-}
-
-extension NetworkRequest {
-    static var keyDetailNetworkRequest: NetworkRequest {
-        let urlString = ServiceURL.baseURL + "/v1/key/info"
-        let url = URL(string: urlString)!
-        let request = NetworkRequest(url: url, method: "GET")
-        request.responseType = CMCResponse<KeyDetail>.self
-        return request
     }
 }
