@@ -12,7 +12,7 @@ import SwiftData
 struct CryptoCurrencyApp: App {
     
     let serviceManager: CoinMarketServiceManager = CoinMarketServiceManager()
-    var swiftDataManager: SwiftDataManager = SwiftDataManager(CryptoToken.self)
+//    var swiftDataManager: SwiftDataManager = SwiftDataManager(CryptoToken.self)
 
     var body: some Scene {
         WindowGroup {
@@ -24,7 +24,8 @@ struct CryptoCurrencyApp: App {
                 }
         }
         .environment(serviceManager)
-        .modelContext(swiftDataManager.context)
+        .modelContainer(for: CryptoToken.self)
+//        .modelContext(swiftDataManager.context)
     }
 }
 

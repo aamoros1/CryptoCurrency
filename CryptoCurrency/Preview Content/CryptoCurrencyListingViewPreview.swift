@@ -18,11 +18,11 @@ private class Mock: CoinMarketServiceManaging {
     }
 }
 
-#Preview {
-    NavigationStack {
-        let container = SwiftDataManager(models: CryptoToken.self)
-        container.addPersistentDataModels(models: CryptoToken.previewCryptoTokens)
-        return CryptoCurrencyListingView(viewModel: .init(modelContext: container.context, serviceManager: Mock()))
-            .modelContainer(container.container)
-    }
-}
+//#Preview {
+//    NavigationStack {
+//        let container = SwiftDataManager(models: CryptoToken.self)
+//        container.addPersistentDataModels(models: CryptoToken.previewCryptoTokens)
+//        return CryptoCurrencyListingView(viewModel: .init(modelContext: container.context, serviceManager: Mock()))
+//            .modelContainer(container.container)
+//    }
+//}
