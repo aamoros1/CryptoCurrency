@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -37,6 +37,7 @@
 		83C2C2BE2B66B40400BA97E7 /* KeyDetailResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 83C2C2BD2B66B40400BA97E7 /* KeyDetailResponse.json */; };
 		83C2C2C02B66B60800BA97E7 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C2C2BF2B66B60800BA97E7 /* XCTestCase+Extension.swift */; };
 		83D2C8F22B6AE9FB000D4187 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 83D2C8F12B6AE9FB000D4187 /* Localizable.xcstrings */; };
+		83E3DAB32B814B5D00C8C645 /* SwiftDataActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E3DAB22B814B5D00C8C645 /* SwiftDataActor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		83C2C2BD2B66B40400BA97E7 /* KeyDetailResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = KeyDetailResponse.json; sourceTree = "<group>"; };
 		83C2C2BF2B66B60800BA97E7 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
 		83D2C8F12B6AE9FB000D4187 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		83E3DAB22B814B5D00C8C645 /* SwiftDataActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataActor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +243,7 @@
 				83C2C2BA2B66AFC900BA97E7 /* Models */,
 				83C2C2B82B66ADCB00BA97E7 /* CMCServices.swift */,
 				833806382B6EDDE90007F73F /* SwiftDataManager.swift */,
+				83E3DAB22B814B5D00C8C645 /* SwiftDataActor.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				833806372B6ED6D00007F73F /* SwiftDataManager+Extension.swift in Sources */,
 				8345DEF22B703D9A00FD65A4 /* CryptoCurrencyListingViewPreview.swift in Sources */,
 				83C2C2B72B66AD2900BA97E7 /* ServiceURL.swift in Sources */,
+				83E3DAB32B814B5D00C8C645 /* SwiftDataActor.swift in Sources */,
 				833806352B6EA6220007F73F /* CryptoToken+Extension.swift in Sources */,
 				8338063E2B6FC94A0007F73F /* CryptoCurrencyGridRow.swift in Sources */,
 				83A8A8AC2B69CD7A00985323 /* BaseNetworkServiceInterceptor.swift in Sources */,

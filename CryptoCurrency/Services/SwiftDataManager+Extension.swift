@@ -9,10 +9,10 @@ import SwiftData
 import Foundation
 
 extension SwiftDataManager {
-    func addPersistentDataModels(models: [any PersistentModel]) {
+    func addPersistentDataModels<Models: PersistentModel>(models: [Models]) {
         Task {
-            let actor = SwiftDataCacheHandler(modelContainer: container)
-            try! await actor.saveCachedObjects(models: models)
+            let actor = SwiftDataActor(modelContainer: container)
+            try! await actor.safeData(models: models)
         }
     }
 }

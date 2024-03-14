@@ -1,18 +1,25 @@
 //
 // CryptoCurrencyTests.swift
 // 
-// Created by Alwin Amoros on 11/22/23.
+//
 // 
 
 	
 
 import XCTest
+import SwiftData
 @testable import CryptoCurrency
 
 final class CryptoCurrencyTests: XCTestCase {
 
+    private let dataManager: SwiftDataManager = .init(CryptoToken.self)
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+    }
+
+    override func setUp() {
+        let example = CryptoToken(rankt: 1, name: "Bitcoin", symbol: "BTC")
+        dataManager.context.insert(example)
     }
 
     override func tearDownWithError() throws {
@@ -20,11 +27,12 @@ final class CryptoCurrencyTests: XCTestCase {
     }
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+        let descript = FetchDescriptor<CryptoToken>(predicate: #Predicate { $0.isActive })
+        let model = try? dataManager.context.fetch(descript).first!
+        model?.isFavorite = false
+        XCTAssertFalse(dataManager.context.insertedModelsArray.isEmpty)
+        XCTAssertTrue(dataManager.context.deletedModelsArray.isEmpty)
+        XCTAssertTrue(dataManager.context.changedModelsArray.isEmpty)
     }
 
     func testPerformanceExample() throws {
