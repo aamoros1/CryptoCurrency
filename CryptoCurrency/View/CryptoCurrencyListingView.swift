@@ -29,6 +29,7 @@ final class CryptoCurrencyListingViewModel {
                 SortDescriptor(\.id)
             ])
             if tokens.isEmpty {
+                print("TEST")
                 tokens = try await serviceManager.fetchIinitialBatch(startAt: 1, limitBatchSize: 50)
                 try await actor.safeData(models: tokens)
             }

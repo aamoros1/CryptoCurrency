@@ -38,7 +38,7 @@
 //        } catch let error {
 //            fatalError(error.localizedDescription)
 //        }
-////        container.deleteAllData()
+//        container.deleteAllData()
 //        context = ModelContext(container)
 //        context.autosaveEnabled = false
 //        try? context.delete(model: CryptoToken.self)
