@@ -9,6 +9,7 @@ import Foundation
 
 @Model
 class CryptoToken: Codable {
+    @Attribute(.unique)
     let id: Int
     let rank: Int
     let name: String
@@ -28,6 +29,10 @@ class CryptoToken: Codable {
         self.id = rankt
         dateCreated = Date().description(with: .current)
         isActive = true
+    }
+
+    convenience init() {
+        self.init(rankt: 0, name: "", symbol: "")
     }
     
     required init(from decoder: Decoder) throws {
@@ -58,5 +63,15 @@ extension CryptoToken {
         try container.encode(symbol, forKey: .symbol)
         try container.encode(dateCreated, forKey: .dateCreated)
         try container.encode(isActive, forKey: .isActive)
+    }
+
+    var CryptoTokenPublisher: NotificationCenter.Publisher {
+        NotificationCenter.default.publisher(for: notificationName)
+    }
+}
+
+public extension PersistentModel {
+    var notificationName: Notification.Name {
+        .init(String(describing: self))
     }
 }

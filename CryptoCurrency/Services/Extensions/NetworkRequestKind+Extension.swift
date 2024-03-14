@@ -1,7 +1,7 @@
 //
 // NetworkRequestKind+Extension.swift
 // 
-// Created by Alwin Amoros on 2/2/24.
+//
 //
 
 import Foundation

@@ -1,7 +1,7 @@
 //
 // CryptoCurrencyApp.swift
 // 
-// Created by Alwin Amoros on 11/22/23.
+// 
 // 
 
 import SwiftUI
@@ -21,29 +21,20 @@ struct CryptoCurrencyApp: App {
                 .task(priority: .background) {
                     Context.registerDependencies()
                     await serviceManager.fetchKeyDetail()
-                    let results = try? await serviceManager.fetchTokens(with: ["BTC", "USDT"])
-                    print(results)
-//                    JSONSerialization.jsonObject(with: <#T##Data#>, options: .topLevelDictionaryAssumed)
                 }
         }
-        .modelContainer(swiftDataManager.container)
+        .environment(serviceManager)
+        .modelContext(swiftDataManager.context)
     }
 }
 
-@ModelActor
-actor SwiftDataCacheHandler {
-    func saveCachedObjects(models: [any PersistentModel]) throws {
-        models.forEach { model in
-            modelContext.insert(model)
-        }
-        try modelContext.save()
-    }
-}
 
 struct MainView: View {
+    @Environment(\.modelContext) var context
+    @Environment(CoinMarketServiceManager.self) private var serviceManager
     var body: some View {
         TabView {
-            CryptoCurrencyListingView()
+            CryptoCurrencyListingView(viewModel: .init(modelContext: context, serviceManager: serviceManager))
                 .tabItem {
                     Label("MainView.HomeTab", systemImage: "house")
                 }
@@ -52,7 +43,7 @@ struct MainView: View {
                     Label(
                         title: { Text("Usage") },
                         icon: { /*@START_MENU_TOKEN@*/Image(systemName: "42.circle")/*@END_MENU_TOKEN@*/ }
-)
+                    )
                 }
         }
     }

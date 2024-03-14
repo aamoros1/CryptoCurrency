@@ -1,7 +1,7 @@
 //
 // CryptoCurrencyTests.swift
 // 
-// Created by Alwin Amoros on 11/22/23.
+//
 // 
 
 	

@@ -1,7 +1,7 @@
 //
 // CMCServices.swift
 // 
-// Created by Alwin Amoros on 1/28/24.
+//
 //
 
 import Observation
@@ -19,11 +19,18 @@ enum BaseNetworkServiceError: Error {
 
 protocol CoinMarketServiceManaging: NetworkServiceAccessor, AnyObject {
     func fetchKeyDetail() async
+    func fetchIinitialBatch(
+        startAt: Int,
+        limitBatchSize: Int
+    ) async  throws -> [CryptoToken]
 }
 
 @Observable
 final class CoinMarketServiceManager: CoinMarketServiceManaging {
-    
+    private struct Constants {
+        static let batchSize: Int = 50
+        static let startAt: Int = 1
+    }
     private let cryptoToolServices: CoinMarketCryptoToolServices = .init()
     var keydetail: KeyDetail? = nil
 
@@ -32,10 +39,41 @@ final class CoinMarketServiceManager: CoinMarketServiceManaging {
         keydetail = try? await cryptoToolServices.fetchKeyDetailInfo()
     }
 
+    func fetchIinitialBatch(
+        startAt: Int = Constants.startAt,
+        limitBatchSize: Int = Constants.batchSize
+    ) async  throws -> [CryptoToken] {
+        let query = [
+            "start" : String(startAt),
+            "limit": String(limitBatchSize)
+        ]
+        async let token = networkService.processRequest(with: .coinMarketCap, content: query)
+        
+        guard
+            try await token.waitForCompletion(for: 5000)
+        else {
+            throw NSError()
+        }
+
+        guard
+            let response = try await token.result as? NetworkResponse
+        else {
+            throw NSError()
+        }
+
+        guard
+            let cmcResponse = response.content as? CMCResponse<[CryptoToken]>
+        else {
+            //  handle error could be from server side
+            return []
+        }
+        return cmcResponse.data ?? []
+    }
+
     func fetchTokens(with symbolTokens: [String]) async throws -> [CryptoToken]? {
         let query = ["symbol": symbolTokens.joined(separator: ",")]
         async let token = networkService.processRequest(with: .coinMarketCap, content: query)
-        // CMCResponse<CryptoToken>.self
+        
         guard
             try await token.waitForCompletion(for: 5000)
         else {

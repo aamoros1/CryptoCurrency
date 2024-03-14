@@ -8,7 +8,7 @@ import SwiftUI
 import Foundation
 
 struct CryptoCurrencyGridRow: View {
-    
+    @Environment(\.modelContext) var context
     let cryptoToken: CryptoToken
     var body: some View {
         GridRow {
@@ -20,7 +20,8 @@ struct CryptoCurrencyGridRow: View {
                     .padding()
                     .onTapGesture {
                         cryptoToken.isFavorite.toggle()
-                }
+//                        try? context.save()
+                    }
                     .gridColumnAlignment(.trailing)
                 
                 Text(cryptoToken.rank.description)

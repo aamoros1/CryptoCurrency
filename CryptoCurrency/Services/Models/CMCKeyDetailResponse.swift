@@ -7,7 +7,7 @@
 import Foundation
 
 struct CMCResponse<Model: Codable>: Codable {
-    let data: Model
+    let data: Model?
     let status: CMCStatusResponse
 }
 
