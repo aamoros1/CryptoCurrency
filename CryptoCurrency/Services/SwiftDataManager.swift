@@ -46,41 +46,6 @@ final class SwiftDataManager {
         } catch let error {
             fatalError(error.localizedDescription)
         }
-//        registerNotifications()
-    }
-
-//    private func registerNotifications() {
-//        NotificationCenter.default.addObserver(self, selector: #selector(willSave), name: .NSManagedObjectContextWillSave, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(didSave), name: .NSManagedObjectContextDidSave, object: nil)
-//    }
-
-    @objc
-    private func willSave(notification: NSNotification) {
-        let notificationNames = context.insertedModelsArray.map { $0.notificationName }
-        print("\(context.hasChanges)")
-        Task {
-            print("\(await context.container.mainContext.insertedModelsArray)")
-        }
-        print("\(context.changedModelsArray)")
-        print("\(context.insertedModelsArray)")
-        print("\(context.deletedModelsArray)")
-        modelsToBeSaved = Set(notificationNames)
-    }
-    @objc
-    private func didSave(notification: NSNotification) {
-        print("\(context.hasChanges)")
-        print("\(context.changedModelsArray)")
-        print("\(context.insertedModelsArray)")
-        print("\(context.deletedModelsArray)")
-        modelsToBeSaved.forEach { notificationName in
-            print("saved: \(notificationName)")
-            NotificationCenter.default.post(name: notificationName, object: nil)
-        }
     }
 }
 
-extension ModelContext {
-    func willSave() {
-        print(insertedModelsArray)
-    }
-}

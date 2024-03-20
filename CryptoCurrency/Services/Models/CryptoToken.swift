@@ -65,13 +65,12 @@ extension CryptoToken {
         try container.encode(isActive, forKey: .isActive)
     }
 
-    var CryptoTokenPublisher: NotificationCenter.Publisher {
+    static var CryptoTokenPublisher: NotificationCenter.Publisher {
         NotificationCenter.default.publisher(for: notificationName)
     }
-}
-
-public extension PersistentModel {
-    var notificationName: Notification.Name {
+    
+    static var notificationName: Notification.Name {
         .init(String(describing: self))
     }
 }
+

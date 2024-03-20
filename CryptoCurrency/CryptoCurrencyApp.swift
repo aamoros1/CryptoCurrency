@@ -24,7 +24,6 @@ struct CryptoCurrencyApp: App {
                 }
         }
         .environment(serviceManager)
-//        .environment(swiftDataManager)
         .modelContext(swiftDataManager.context)
     }
 }

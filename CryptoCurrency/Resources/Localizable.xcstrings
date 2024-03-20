@@ -1,99 +1,110 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "KeyDetailPlanView.CreditLimitMonthlyReset" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "In %@"
-          }
+    "sourceLanguage" : "en",
+    "strings" : {
+        "COLUMN.NAME" : {
+            "extractionState" : "manual",
+            "localizations" : {
+                "en" : {
+                    "stringUnit" : {
+                        "state" : "translated",
+                        "value" : "Name"
+                    }
+                }
+            }
+        },
+        "KeyDetailPlanView.CreditLimitMonthlyReset" : {
+            "extractionState" : "manual",
+            "localizations" : {
+                "en" : {
+                    "stringUnit" : {
+                        "state" : "translated",
+                        "value" : "In %@"
+                    }
+                }
+            }
+        },
+        "KeyDetailPlanView.Header" : {
+            "extractionState" : "manual",
+            "localizations" : {
+                "en" : {
+                    "stringUnit" : {
+                        "state" : "translated",
+                        "value" : "Plan"
+                    }
+                }
+            }
+        },
+        "KeyDetailView.currentDay" : {
+            "extractionState" : "manual",
+            "localizations" : {
+                "en" : {
+                    "stringUnit" : {
+                        "state" : "translated",
+                        "value" : "Current Day"
+                    }
+                }
+            }
+        },
+        "KeyDetailView.currentMinute" : {
+            "extractionState" : "manual",
+            "localizations" : {
+                "en" : {
+                    "stringUnit" : {
+                        "state" : "translated",
+                        "value" : "Current Minute"
+                    }
+                }
+            }
+        },
+        "KeyDetailView.currentMonth" : {
+            "extractionState" : "manual",
+            "localizations" : {
+                "en" : {
+                    "stringUnit" : {
+                        "state" : "translated",
+                        "value" : "Current Month"
+                    }
+                }
+            }
+        },
+        "MainView.HomeTab" : {
+            "localizations" : {
+                "en" : {
+                    "stringUnit" : {
+                        "state" : "translated",
+                        "value" : "Home"
+                    }
+                }
+            }
+        },
+        "Tokens" : {
+            
+        },
+        "Usage" : {
+            
+        },
+        "Usage.Remaining" : {
+            "extractionState" : "manual",
+            "localizations" : {
+                "en" : {
+                    "stringUnit" : {
+                        "state" : "translated",
+                        "value" : "Credits Remaining: %d"
+                    }
+                }
+            }
+        },
+        "Usage.Row" : {
+            "extractionState" : "manual",
+            "localizations" : {
+                "en" : {
+                    "stringUnit" : {
+                        "state" : "translated",
+                        "value" : "Credits Used: %d"
+                    }
+                }
+            }
         }
-      }
     },
-    "KeyDetailPlanView.Header" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Plan"
-          }
-        }
-      }
-    },
-    "KeyDetailView.currentDay" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Current Day"
-          }
-        }
-      }
-    },
-    "KeyDetailView.currentMinute" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Current Minute"
-          }
-        }
-      }
-    },
-    "KeyDetailView.currentMonth" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Current Month"
-          }
-        }
-      }
-    },
-    "MainView.HomeTab" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Home"
-          }
-        }
-      }
-    },
-    "Tokens" : {
-
-    },
-    "Usage" : {
-
-    },
-    "Usage.Remaining" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Credits Remaining: %d"
-          }
-        }
-      }
-    },
-    "Usage.Row" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Credits Used: %d"
-          }
-        }
-      }
-    }
-  },
-  "version" : "1.0"
+    "version" : "1.0"
 }

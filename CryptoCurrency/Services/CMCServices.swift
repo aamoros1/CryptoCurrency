@@ -53,7 +53,6 @@ final class CoinMarketServiceManager: CoinMarketServiceManaging {
             try await token.waitForCompletion(for: 5000)
         else {
             let response = try await token.result as? NetworkResponse
-            print(response?.error)
             return []
         }
 

@@ -23,6 +23,7 @@
 		838715802B0EA0E700D1DDCF /* CryptoCurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8387157F2B0EA0E700D1DDCF /* CryptoCurrencyTests.swift */; };
 		8387158A2B0EA0E700D1DDCF /* CryptoCurrencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838715892B0EA0E700D1DDCF /* CryptoCurrencyUITests.swift */; };
 		8387158C2B0EA0E700D1DDCF /* CryptoCurrencyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8387158B2B0EA0E700D1DDCF /* CryptoCurrencyUITestsLaunchTests.swift */; };
+		838B71722BA9E5DD00215EA1 /* PersistentModel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838B71712BA9E5DD00215EA1 /* PersistentModel+Extension.swift */; };
 		83A8A8A62B6912BA00985323 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8A8A52B6912BA00985323 /* Context.swift */; };
 		83A8A8A92B69137600985323 /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = 83A8A8A82B69137600985323 /* DependencyInjection */; };
 		83A8A8AC2B69CD7A00985323 /* BaseNetworkServiceInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8A8AB2B69CD7A00985323 /* BaseNetworkServiceInterceptor.swift */; };
@@ -79,6 +80,7 @@
 		838715852B0EA0E700D1DDCF /* CryptoCurrencyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoCurrencyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		838715892B0EA0E700D1DDCF /* CryptoCurrencyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyUITests.swift; sourceTree = "<group>"; };
 		8387158B2B0EA0E700D1DDCF /* CryptoCurrencyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		838B71712BA9E5DD00215EA1 /* PersistentModel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentModel+Extension.swift"; sourceTree = "<group>"; };
 		83A8A8A52B6912BA00985323 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		83A8A8AB2B69CD7A00985323 /* BaseNetworkServiceInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkServiceInterceptor.swift; sourceTree = "<group>"; };
 		83A8A8AE2B69CDD100985323 /* NetworkService+DependencyModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService+DependencyModule.swift"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 		838715692B0EA0E500D1DDCF /* CryptoCurrency */ = {
 			isa = PBXGroup;
 			children = (
+				838B71702BA9E5AD00215EA1 /* Utilities */,
 				83A8A8A52B6912BA00985323 /* Context.swift */,
 				83D2C8F02B6AE9D5000D4187 /* Resources */,
 				83A8A8B42B6A8BE100985323 /* View */,
@@ -203,6 +206,15 @@
 			path = CryptoCurrencyUITests;
 			sourceTree = "<group>";
 		};
+		838B71702BA9E5AD00215EA1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				83E3DAB22B814B5D00C8C645 /* SwiftDataActor.swift */,
+				838B71712BA9E5DD00215EA1 /* PersistentModel+Extension.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		83A8A8AA2B69CD6000985323 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,7 +255,6 @@
 				83C2C2BA2B66AFC900BA97E7 /* Models */,
 				83C2C2B82B66ADCB00BA97E7 /* CMCServices.swift */,
 				833806382B6EDDE90007F73F /* SwiftDataManager.swift */,
-				83E3DAB22B814B5D00C8C645 /* SwiftDataActor.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -423,6 +434,7 @@
 				833806352B6EA6220007F73F /* CryptoToken+Extension.swift in Sources */,
 				8338063E2B6FC94A0007F73F /* CryptoCurrencyGridRow.swift in Sources */,
 				83A8A8AC2B69CD7A00985323 /* BaseNetworkServiceInterceptor.swift in Sources */,
+				838B71722BA9E5DD00215EA1 /* PersistentModel+Extension.swift in Sources */,
 				836973EC2B6D7B30009570B4 /* CryptoToken.swift in Sources */,
 				83A8A8AF2B69CDD100985323 /* NetworkService+DependencyModule.swift in Sources */,
 				8338063B2B6EE9480007F73F /* Separator.swift in Sources */,
