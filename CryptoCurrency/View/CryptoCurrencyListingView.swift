@@ -8,42 +8,59 @@ import SwiftUI
 import SwiftData
 import Foundation
 
+enum CryptoTokenColumns {
+    case favorite
+    case rank
+    case name
+    
+    var columnName: String {
+        switch self {
+        case .favorite:
+            return ""
+        case .rank:
+            return "#"
+        case .name:
+            return String(localized: "COLUMN.NAME")
+        }
+    }
+
+    var gridItem: GridItem {
+        switch self {
+        case .favorite:
+            return .init(.fixed(20))
+        case .rank:
+            return .init(.fixed(80))
+        case .name:
+            return .init(.fixed(200))
+        }
+    }
+}
+
 @Observable
 final class CryptoCurrencyListingViewModel {
     var tokens: [CryptoToken] = []
-    var actor: SwiftDataClass
+    var actor: SwiftDataActor
     
     private var serviceManager: CoinMarketServiceManaging
-    var cryptoTokenNotification: NotificationCenter.Publisher = {
-        CryptoToken().CryptoTokenPublisher
-    }()
-    var test: NotificationCenter.Publisher = {
-        NotificationCenter.default.publisher(for: .NSManagedObjectContextWillSave)
-    }()
     
     init(modelContext: ModelContext, serviceManager: CoinMarketServiceManaging) {
-//        modelContext.autosaveEnabled = false
-        actor = SwiftDataClass(modelContext: modelContext)
+        actor = .init(modelContainer: modelContext.container)
         self.serviceManager = serviceManager
     }
     
     func fetchInitialTokens() async {
         do {
-            tokens = try actor.fetchData(predicate: #Predicate { $0.isActive }, sortByDescription: [
+            tokens = try await actor.fetchData(predicate: #Predicate { $0.isActive }, sortByDescription: [
                 SortDescriptor(\.id)
             ])
             if tokens.isEmpty {
                 tokens = try await serviceManager.fetchIinitialBatch(startAt: 1, limitBatchSize: 50)
-                try actor.safeData(models: tokens)
+                try await actor.safeData(models: tokens)
             }
         } catch let error {
             print(error)
         }
     }
-    
-//    func registerNotification() async {
-//        await actor.register()
-//    }
 }
 
 struct CryptoCurrencyListingView: View {
@@ -51,7 +68,13 @@ struct CryptoCurrencyListingView: View {
     @State private var viewModel: CryptoCurrencyListingViewModel
     @Environment(\.modelContext) var context
     
-    let columns = [GridItem(.flexible()), GridItem(.flexible())]
+    let columns: [GridItem] = {
+        [
+            CryptoTokenColumns.favorite,
+            CryptoTokenColumns.rank,
+            CryptoTokenColumns.name]
+            .map { $0.gridItem }
+    }()
     
     init(viewModel: CryptoCurrencyListingViewModel) {
         self.viewModel = viewModel
@@ -62,26 +85,25 @@ struct CryptoCurrencyListingView: View {
             LazyVGrid(columns: columns) {
                 ForEach(viewModel.tokens) { token in
                     CryptoCurrencyGridRow(cryptoToken: token)
-                        .gridColumnAlignment(.leading)
-                    Separator()
                 }
             }
         }
-        .onReceive(viewModel.test) { _ in
+        .onReceive(CryptoToken.CryptoTokenPublisher) { _ in
             /// Implement feature to reload savedData
-//            context.autosaveEnabled = false
-            Task {
-//                print(await viewModel.actor.modelContext.insertedModelsArray)
-            }
             print("did save")
         }
         .task(priority: .background) {
-//            await viewModel.registerNotification()
-//            viewModel.actor.modelContext.autosaveEnabled = false
             await viewModel.fetchInitialTokens()
-
         }
         .navigationTitle("Tokens")
         .safeAreaPadding(.top)
+    }
+    
+    @ViewBuilder
+    private func buildCellFor(token: CryptoToken) -> some View {
+        HStack {
+            Text(token.name)
+            Text(token.symbol)
+        }
     }
 }
